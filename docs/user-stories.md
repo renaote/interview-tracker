@@ -1,4 +1,4 @@
-# User stories — Interview & Internship Prep Tracker
+# User stories Interview & Internship Prep Tracker
 
 Format: As a `<role>`, I want `<goal>`, so that `<benefit>`.
 
