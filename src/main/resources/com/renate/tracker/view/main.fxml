@@ -7,41 +7,47 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.renate.tracker.controller.MainController"
+            stylesheets="@styles.css"
             prefWidth="1000" prefHeight="650">
 
-    <!-- Top: dashboard numbers + search bar -->
+    <!-- Top: header banner, dashboard numbers, search bar -->
     <top>
-        <VBox spacing="10">
-            <padding><Insets top="14" right="16" bottom="6" left="16"/></padding>
-            <HBox spacing="12" fx:id="statCardBox" />
-            <HBox spacing="8" alignment="CENTER_LEFT">
-                <TextField fx:id="searchField" promptText="Search by company or role..." prefWidth="280"/>
-                <ComboBox fx:id="stageFilterBox" promptText="Filter by stage"/>
-                <Button text="Clear" onAction="#onClearFilters"/>
-                <Region HBox.hgrow="ALWAYS"/>
-                <Button text="+ Add company" onAction="#onAddCompany" defaultButton="true"/>
+        <VBox>
+            <HBox styleClass="header-banner">
+                <Label text="Interview &amp; Internship Prep Tracker" styleClass="header-title"/>
             </HBox>
+            <VBox styleClass="section-spacing">
+                <HBox spacing="12" fx:id="statCardBox" />
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <padding><Insets top="16" bottom="0" left="0" right="0"/></padding>
+                    <TextField fx:id="searchField" promptText="Search by company or role..." prefWidth="280"/>
+                    <ComboBox fx:id="stageFilterBox" promptText="Filter by stage"/>
+                    <Button text="Clear" onAction="#onClearFilters"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="+ Add company" onAction="#onAddCompany" defaultButton="true" styleClass="primary-button"/>
+                </HBox>
+            </VBox>
         </VBox>
     </top>
 
     <!-- Middle: the table showing every application -->
     <center>
         <TableView fx:id="companyTable">
-            <padding><Insets top="6" right="16" bottom="6" left="16"/></padding>
+            <padding><Insets top="0" right="28" bottom="20" left="28"/></padding>
             <columns>
-                <TableColumn fx:id="colName" text="Company" prefWidth="160"/>
-                <TableColumn fx:id="colRole" text="Role" prefWidth="180"/>
-                <TableColumn fx:id="colStage" text="Stage" prefWidth="110"/>
+                <TableColumn fx:id="colName" text="Company" prefWidth="150"/>
+                <TableColumn fx:id="colRole" text="Role" prefWidth="170"/>
+                <TableColumn fx:id="colStage" text="Stage" prefWidth="120"/>
                 <TableColumn fx:id="colDeadline" text="Deadline" prefWidth="100"/>
-                <TableColumn fx:id="colNotes" text="Notes" prefWidth="260"/>
+                <TableColumn fx:id="colNotes" text="Notes" prefWidth="300"/>
             </columns>
         </TableView>
     </center>
 
     <!-- Bottom: buttons for whatever row is selected -->
     <bottom>
-        <HBox spacing="8" alignment="CENTER_RIGHT">
-            <padding><Insets top="8" right="16" bottom="14" left="16"/></padding>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding><Insets top="0" right="28" bottom="20" left="28"/></padding>
             <Button text="Edit selected" onAction="#onEditCompany"/>
             <Button text="Advance stage" onAction="#onAdvanceStage"/>
             <Button text="Delete selected" onAction="#onDeleteCompany"/>

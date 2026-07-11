@@ -1,0 +1,208 @@
+/* Arial throughout - clean, neutral, guaranteed to be on every
+   Windows machine, so no font-not-found fallback surprises. */
+
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 13px;
+    -fx-background-color: #eef1f6;
+}
+
+.header-banner {
+    -fx-background-color: #1e3a8a;
+    -fx-padding: 24 28 24 28;
+}
+
+.header-title {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-size: 26px;
+}
+
+.section-spacing {
+    -fx-padding: 20 28 20 28;
+    -fx-spacing: 16;
+}
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 14;
+    -fx-border-width: 0 1 1 1;
+    -fx-alignment: center;
+    -fx-min-width: 110;
+}
+
+.accent-applied    { -fx-background-color: #3b82f6; -fx-background-radius: 14 14 0 0; -fx-pref-height: 5; }
+.accent-assessment { -fx-background-color: #f59e0b; -fx-background-radius: 14 14 0 0; -fx-pref-height: 5; }
+.accent-interview  { -fx-background-color: #8b5cf6; -fx-background-radius: 14 14 0 0; -fx-pref-height: 5; }
+.accent-offer      { -fx-background-color: #10b981; -fx-background-radius: 14 14 0 0; -fx-pref-height: 5; }
+.accent-rejected   { -fx-background-color: #9ca3af; -fx-background-radius: 14 14 0 0; -fx-pref-height: 5; }
+
+.stat-count {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 26px;
+    -fx-text-fill: #1f2937;
+}
+
+.stat-label {
+    -fx-font-family: "Arial";
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 12px;
+}
+
+.text-field, .combo-box, .date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 8 12 8 12;
+}
+
+.button {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #f3f4f6;
+}
+
+.primary-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 14;
+    -fx-padding: 4;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #1e3a8a;
+    -fx-background-radius: 12 12 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+.table-row-cell {
+    -fx-border-color: transparent transparent #f0f1f3 transparent;
+    -fx-cell-size: 42px;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.stage-badge {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 4 12 4 12;
+    -fx-background-radius: 14;
+    -fx-font-size: 11px;
+}
+
+.stage-applied    { -fx-background-color: #dbeafe; -fx-text-fill: #1e40af; }
+.stage-assessment { -fx-background-color: #fef3c7; -fx-text-fill: #92400e; }
+.stage-interview  { -fx-background-color: #ede9fe; -fx-text-fill: #5b21b6; }
+.stage-offer      { -fx-background-color: #d1fae5; -fx-text-fill: #065f46; }
+.stage-rejected   { -fx-background-color: #f3f4f6; -fx-text-fill: #4b5563; }
+
+.empty-table-placeholder {
+    -fx-alignment: center;
+    -fx-spacing: 6;
+}
+
+.empty-table-title {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-text-fill: #4b5563;
+}
+
+.empty-table-subtitle {
+    -fx-font-family: "Arial";
+    -fx-font-size: 12px;
+    -fx-text-fill: #9ca3af;
+}
+
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-font-family: "Arial";
+    -fx-min-width: 400;
+}
+
+.dialog-pane > .button-bar > .container {
+    -fx-padding: 16 20 16 20;
+}
+
+.dialog-pane .content.label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #1f2937;
+    -fx-padding: 20;
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color: #1e3a8a;
+    -fx-padding: 18 20 18 20;
+    -fx-spacing: 12;
+}
+
+.dialog-pane:header .header-panel .label {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+}
+
+.field-label {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-text-fill: #374151;
+    -fx-padding: 6 0 0 0;
+}
+
+/* Per-field error message, shown right under that specific field only */
+.error-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 11px;
+    -fx-text-fill: #dc2626;
+    -fx-padding: 0 0 0 2;
+}
+
+/* Red border on an invalid field - the extra ".text-field" in the selector
+   gives this higher specificity than the plain .text-field rule above,
+   so it actually wins instead of being silently overridden */
+.text-field.field-invalid,
+.date-picker.field-invalid {
+    -fx-border-color: #dc2626;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
