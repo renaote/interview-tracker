@@ -1,16 +1,19 @@
 package com.renate.tracker.model;
 
-// The five stages an application can be in.
-// I used an enum instead of just a String so I can't accidentally
-// misspell a stage name somewhere and break the whole app.
+/**
+ * Represents the stage of an application in the interview pipeline.
+ * Order matters: ordinal() is used to drive the dashboard funnel chart
+ * and the "advance stage" button, which just moves to the next one in
+ * this list.
+ */
 public enum Stage {
+    WISHLIST,
     APPLIED,
     ASSESSMENT,
     INTERVIEW,
     OFFER,
     REJECTED;
 
-    // Makes the dropdown show "Applied" instead of "APPLIED"
     @Override
     public String toString() {
         String s = name();

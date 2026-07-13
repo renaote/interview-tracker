@@ -54,8 +54,9 @@ public class MainController {
     private final CompanyDAO dao = new CompanyDAO(dbManager);
     private final ObservableList<Company> tableData = FXCollections.observableArrayList();
 
+    // Wishlist added at the front since it's now the first stage before Applied
     private static final String[] ACCENT_CLASSES = {
-            "accent-applied", "accent-assessment", "accent-interview", "accent-offer", "accent-rejected"
+            "accent-wishlist", "accent-applied", "accent-assessment", "accent-interview", "accent-offer", "accent-rejected"
     };
 
     @FXML
@@ -80,6 +81,7 @@ public class MainController {
                 Label badge = new Label(stage.toString());
                 badge.getStyleClass().add("stage-badge");
                 badge.getStyleClass().add(switch (stage) {
+                    case WISHLIST -> "stage-wishlist";
                     case APPLIED -> "stage-applied";
                     case ASSESSMENT -> "stage-assessment";
                     case INTERVIEW -> "stage-interview";
@@ -205,7 +207,7 @@ public class MainController {
             return;
         }
         Alert confirm = new Alert(Alert.AlertType.CONFIRMATION,
-                "Are you sure you want to delete " + selected.getName() + "? This action can't be undone.");
+                "Are you sure you want to delete this? " + selected.getName() + "? This action can't be undone.");
         confirm.setTitle("Delete company");
         confirm.setHeaderText(null);
         styleDialog(confirm.getDialogPane());
@@ -242,11 +244,9 @@ public class MainController {
         TextField nameField = new TextField(existing != null ? existing.getName() : "");
         TextField roleField = new TextField(existing != null ? existing.getRoleTitle() : "");
         ComboBox<Stage> stageBox = new ComboBox<>(FXCollections.observableArrayList(Stage.values()));
-        stageBox.setValue(existing != null ? existing.getStage() : Stage.APPLIED);
+        stageBox.setValue(existing != null ? existing.getStage() : Stage.WISHLIST);
 
         DatePicker deadlinePicker = new DatePicker(existing != null ? existing.getDeadline() : null);
-        // Gray out and disable any date before today, so a mistaken past
-        // deadline can't even be selected in the first place
         deadlinePicker.setDayCellFactory(picker -> new DateCell() {
             @Override
             public void updateItem(LocalDate date, boolean empty) {
@@ -339,7 +339,7 @@ public class MainController {
     // automatically the way it does for the main window.
     //
     // Note: uses the full "javafx.stage.Stage" name here instead of a plain
-    // import, because we already have our own Stage enum (Applied/Interview/
+    // import, because we already have our own Stage enum (Wishlist/Applied/
     // etc.) and Java can't tell the two apart if both are imported at once.
     private void styleDialog(DialogPane pane) {
         pane.getStylesheets().add(

@@ -34,6 +34,7 @@
     -fx-min-width: 110;
 }
 
+.accent-wishlist   { -fx-background-color: #64748b; -fx-background-radius: 14 14 0 0; -fx-pref-height: 5; }
 .accent-applied    { -fx-background-color: #3b82f6; -fx-background-radius: 14 14 0 0; -fx-pref-height: 5; }
 .accent-assessment { -fx-background-color: #f59e0b; -fx-background-radius: 14 14 0 0; -fx-pref-height: 5; }
 .accent-interview  { -fx-background-color: #8b5cf6; -fx-background-radius: 14 14 0 0; -fx-pref-height: 5; }
@@ -127,6 +128,7 @@
     -fx-font-size: 11px;
 }
 
+.stage-wishlist   { -fx-background-color: #e2e8f0; -fx-text-fill: #334155; }
 .stage-applied    { -fx-background-color: #dbeafe; -fx-text-fill: #1e40af; }
 .stage-assessment { -fx-background-color: #fef3c7; -fx-text-fill: #92400e; }
 .stage-interview  { -fx-background-color: #ede9fe; -fx-text-fill: #5b21b6; }
@@ -188,7 +190,6 @@
     -fx-padding: 6 0 0 0;
 }
 
-/* Per-field error message, shown right under that specific field only */
 .error-label {
     -fx-font-family: "Arial";
     -fx-font-size: 11px;
@@ -196,9 +197,6 @@
     -fx-padding: 0 0 0 2;
 }
 
-/* Red border on an invalid field - the extra ".text-field" in the selector
-   gives this higher specificity than the plain .text-field rule above,
-   so it actually wins instead of being silently overridden */
 .text-field.field-invalid,
 .date-picker.field-invalid {
     -fx-border-color: #dc2626;
