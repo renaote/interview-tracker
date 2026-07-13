@@ -204,3 +204,13 @@
     -fx-border-radius: 10;
     -fx-background-radius: 10;
 }
+
+/* Custom message label used inside info/confirmation dialogs, since the
+   default setContentText() doesn't wrap properly against .dialog-pane's
+   min-width above and was cutting longer messages off */
+.dialog-message {
+    -fx-font-family: "Arial";
+    -fx-font-size: 13px;
+    -fx-text-fill: #1f2937;
+    -fx-padding: 20;
+}

@@ -206,10 +206,20 @@ public class MainController {
             showInfo("Select a row first", "Pick a company to delete.");
             return;
         }
-        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION,
-                "Are you sure you want to delete this? " + selected.getName() + "? This action can't be undone.");
+        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
         confirm.setTitle("Delete company");
         confirm.setHeaderText(null);
+
+        // Using a wrapped Label instead of setContentText() - the default
+        // Alert content text doesn't always wrap properly against our custom
+        // stylesheet's dialog width, which was cutting the message off
+        Label message = new Label(
+                "Are you sure you want to delete " + selected.getName() + "? This action can't be undone.");
+        message.setWrapText(true);
+        message.setMaxWidth(320);
+        message.getStyleClass().add("dialog-message");
+        confirm.getDialogPane().setContent(message);
+
         styleDialog(confirm.getDialogPane());
         confirm.showAndWait().filter(b -> b == ButtonType.OK).ifPresent(b -> {
             dao.deleteCompany(selected.getId());
@@ -359,9 +369,21 @@ public class MainController {
         });
     }
 
+    // Shows a simple info popup - used for things like "select a row first"
+    // warnings. Builds the message as a wrapped Label instead of using
+    // setContentText(), since the default content text doesn't wrap properly
+    // against our custom stylesheet and was cutting longer messages off.
     private void showInfo(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, message);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
+        alert.setHeaderText(null);
+
+        Label messageLabel = new Label(message);
+        messageLabel.setWrapText(true);
+        messageLabel.setMaxWidth(320);
+        messageLabel.getStyleClass().add("dialog-message");
+        alert.getDialogPane().setContent(messageLabel);
+
         styleDialog(alert.getDialogPane());
         alert.showAndWait();
     }
